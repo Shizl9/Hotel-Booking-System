@@ -36,6 +36,17 @@
             double averagePrice = rooms.Average(room => room.PricePerNight);
 
             Console.WriteLine($"Average Price: {averagePrice}");
+            Console.WriteLine("============================================");
+
+            // Find most expensive room
+            double maxPrice = rooms.Max(room => room.PricePerNight);
+
+            var expensiveRoom = rooms
+                .FirstOrDefault(room => room.PricePerNight == maxPrice);
+
+            Console.WriteLine("Most Expensive Room:");
+
+            Console.WriteLine($"Room {expensiveRoom?.RoomNumber} - {expensiveRoom?.Type}");
 
         }
     }
