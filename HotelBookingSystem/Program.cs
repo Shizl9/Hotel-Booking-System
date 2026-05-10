@@ -27,7 +27,12 @@
                 Console.WriteLine(room.RoomNumber);
             }
 
-            
+            // Count booked rooms:
+            int bookedCount = rooms.Count(room => room.IsBooked);
+
+            Console.WriteLine($"Booked Rooms Count: {bookedCount}");
+
+
         }
     }
 }
