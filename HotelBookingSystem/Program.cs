@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            // Create sample room data:
             List<Room> rooms = new List<Room>
             {
              new Room { Id = 1, RoomNumber = "101", Type = "Single", PricePerNight = 500, IsBooked = false, Floor = 1 },
@@ -15,6 +16,18 @@
              new Room { Id = 7, RoomNumber = "401", Type = "Single", PricePerNight = 600, IsBooked = false, Floor = 4 },
              new Room { Id = 8, RoomNumber = "402", Type = "Double", PricePerNight = 950, IsBooked = false, Floor = 4 }
             };
+
+            // Get all available rooms:
+            var availableRooms = rooms.Where(room => room.IsBooked == false);
+
+            Console.WriteLine("Available Rooms:");
+
+            foreach (var room in availableRooms)
+            {
+                Console.WriteLine(room.RoomNumber);
+            }
+
+            
         }
     }
 }
