@@ -32,6 +32,10 @@
 
             Console.WriteLine($"Booked Rooms Count: {bookedCount}");
 
+            // Calculate average room price
+            double averagePrice = rooms.Average(room => room.PricePerNight);
+
+            Console.WriteLine($"Average Price: {averagePrice}");
 
         }
     }
